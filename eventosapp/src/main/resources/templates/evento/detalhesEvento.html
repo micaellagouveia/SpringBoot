@@ -13,38 +13,54 @@
         <link rel="stylesheet" href="style/styleCss.css"/>
     </head>
     <body>
-        <h1><span th:text = "${evento.nome}"></span></h1>
-        <h3><a href="/eventos" class="waves-effect waves-light btn"><i class="material-icons right">event_note</i>Lista de Eventos</a></h3>
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo"><span th:text = "${evento.nome}"></span></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="/eventos" class="waves-effect waves-light btn"><i class="material-icons right">event_note</i>Lista de Evento</a></li>
 
-        <div th:each="evento : ${evento}" class="container">
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+        <div th:each="evento : ${evento}" class="container detalhesEvento">
+            <h5>Detalhes do Evento</h5>
             <div class="row">
                 <p>Nome: <span th:text = "${evento.nome}"></span></p>
                 <p>Local: <span th:text = "${evento.local}"></span></p>
                 <p>Data: <span th:text = "${evento.data}"></span></p>
                 <p>Horario: <span th:text = "${evento.horario}"></span></p>
-
-            </div>
-
-            <form method="post">
-                Nome: <input type="text" value="" name="nomeConvidado"/>
-                RG: <input type="text" value=" " name="rg"/>
-                <button type="sumit" class="waves-effect waves-light btn">Adicionar</button>
-
-            </form>
-
-        </div>
-        <h5>Lista de Convidados</h5>
-        <div class="container" th:each="convidado : ${convidados}">
-            <div class="row">
-                <div class="input-field col s6">
-                    <p><span th:text="${convidado.nomeConvidado}"></span></p>
-                </div>
-                <div class="input-field col s3">
-                    <p><span th:text="${convidado.rg}"></span></p>
-                </div>
             </div>
         </div>
 
+            <th:block th:include="msgValidacao"></th:block>
+
+            <div class="container formConvidado">
+                <form method="post" th:object="${convidado}">
+                    Nome: <input type="text" value="" name="nomeConvidado"/>
+                    RG: <input type="text" value=" " name="rg"/>
+                    <button type="sumit" class="waves-effect waves-light btn">Adicionar</button>
+                </form>
+            </div>
+
+        <table class="container tabelaConvidado">
+            <thead>
+                <tr>
+                    <th>Convidado</th>
+                    <th>RG</th>
+                    <th>Deletar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="convidado: ${convidados}">
+                <td><span th:text="${convidado.nomeConvidado}"></span></td>
+                <td><span th:text="${convidado.rg}"></span></td>
+                <td><a th:href="${(#mvc.url('EC#deletarConvidado').arg(0, convidado.rg)).build()}" class="waves-effect waves-light btn-small"><i class="material-icons">delete</i></a></td>
+            </tr>
+            </tbody>
+        </table>
 
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="materialize/js/materialize.min.js"></script>

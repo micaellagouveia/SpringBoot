@@ -13,8 +13,21 @@
         <link rel="stylesheet" href="style/styleCss.css"/>
     </head>
     <body>
-     <h1>Cadastro de Eventos</h1>
-     <h3><a href="/eventos" class="waves-effect waves-light btn"><i class="material-icons right">event_note</i>Lista de Eventos</a></h3>
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo">Cadastro de Eventos</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="/eventos" class="waves-effect waves-light btn"><i class="material-icons right">event_note</i>Lista de Evento</a></li>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+     <th:block th:include="msgValidacao"></th:block>
+
+     <div class="container formEvento">
       <form class = "container" method="post">
          Nome: <input type="text" value="" name="nome"/>
             <div class="row">
@@ -25,11 +38,12 @@
                     Data: <input type="date" value="" name="data"/>
                 </div>
                 <div class="input-field col s3">
-                    Horário:<input type="text" value="" name="horario"/>
+                    Horário:<input type="time" value="" name="horario"/>
                 </div>
             </div>
           <button type="submit" class="waves-effect waves-light btn">Salvar</button>
      </form>
+     </div>
 
      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
      <script type="text/javascript" src="materialize/js/materialize.min.js"></script>

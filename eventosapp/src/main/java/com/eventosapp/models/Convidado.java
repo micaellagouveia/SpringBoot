@@ -1,15 +1,16 @@
 package com.eventosapp.models;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Convidado {
 
     @Id
+    @NotEmpty
     private String rg;
 
+    @NotEmpty
     private String nomeConvidado;
 
     @ManyToOne //muitos convidados para um só evento -> relacionar no banco
