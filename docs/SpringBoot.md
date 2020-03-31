@@ -1,4 +1,6 @@
 # SpringBoot Componentes
+<br>
+
 |Nome|Descrição
 |-|-|
 @Bean| resposabiliza o spring pelas instâncias da classe.

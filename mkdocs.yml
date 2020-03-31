@@ -1,9 +1,0 @@
-site_name: SpringBoot
-nav:
-  - Home: index.md
-  - Resumos:
-    - SpringBoot: SpringBoot.md
-    - EventosApp: EventosApp.md
-theme:
-  name: null
-  custom_dir: 'cinder'
