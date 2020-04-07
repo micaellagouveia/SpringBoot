@@ -1,3 +1,4 @@
 - [Home](index.md)
 - [Eventos App](EventosApp.md)
 - [SpringBoot Componentes](SpringBoot.md)
+- [Mensagens com RabbitMQ](RabbitMQ.md)
