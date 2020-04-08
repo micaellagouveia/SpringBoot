@@ -2,3 +2,4 @@
 - [Eventos App](EventosApp.md)
 - [SpringBoot Componentes](SpringBoot.md)
 - [Mensagens com RabbitMQ](RabbitMQ.md)
+- [Rest Service](RestService.md)
