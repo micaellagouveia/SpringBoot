@@ -1,9 +1,9 @@
-package com.payroll;
+package com.payroll.dataConfiguration;
 
-import com.payroll.Employee;
+import com.payroll.models.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-interface EmployeeRepository extends JpaRepository <Employee, Long> {
+public interface EmployeeRepository extends JpaRepository <Employee, Long> {
 }
 
 // Essa interface estende o JpaRepository do Spring Data JPA, especificando o tipo de domínio como Funcionário e o tipo

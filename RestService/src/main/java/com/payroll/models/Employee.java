@@ -1,4 +1,4 @@
-package com.payroll;
+package com.payroll.models;
 
 
 import lombok.Data;
@@ -19,7 +19,7 @@ public class Employee {
 
     Employee(){}
 
-    Employee(String firstName, String lastName, String role){
+    public Employee(String firstName, String lastName, String role){
         this.firstName = firstName;
         this.lastName = lastName;
         this.role = role;

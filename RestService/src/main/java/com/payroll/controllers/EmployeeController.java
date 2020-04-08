@@ -1,5 +1,8 @@
-package com.payroll;
+package com.payroll.controllers;
 
+import com.payroll.exceptions.EmployeeNotFoundException;
+import com.payroll.dataConfiguration.EmployeeRepository;
+import com.payroll.models.Employee;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.IanaLinkRelations;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +24,11 @@ public class EmployeeController {
     public EmployeeController(EmployeeRepository repository, EmployeeResourceAssembler assembler) {
         this.repository = repository;
         this.assembler = assembler;
+    }
+
+    @GetMapping("/")
+    String initial(){
+        return "Hello World!";
     }
 
     @GetMapping("/employees")
