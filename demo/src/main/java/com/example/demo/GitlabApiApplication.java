@@ -1,4 +1,4 @@
-package com.example.consumingrest;
+package com.example.demo;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 
 
 @SpringBootApplication
-public class ConsumingRestApplication {
+public class GitlabApiApplication {
 
 	private static final Logger log = LoggerFactory.getLogger(ConsumingRestApplication.class);
 
@@ -24,12 +24,5 @@ public class ConsumingRestApplication {
 		return builder.build();
 	}
 
-	@Bean
-	public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
-		return args -> {
-			Project project = restTemplate.getForObject("https://gitlab.com/api/v4/projects/18135973\n", Project.class);
-			log.info(project.toString());
-		};
 	}
 }
-
